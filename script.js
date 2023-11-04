@@ -91,17 +91,16 @@ newBook.addEventListener('click', () => {
 const submitBtn = document.querySelector('#submit');
 
 submitBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
-  const pages = document.getElementById('pages').value;
-  const read = document.getElementById('read').checked;
-  const book = new Book(title, author, pages, read);
-  addBookToLibrary(book);
-  displayBooks(myLibrary);
-  dialog.close();
-  form.reset();
+  if (form.checkValidity()){
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const read = document.getElementById('read').checked;
+    const book = new Book(title, author, pages, read);
+    addBookToLibrary(book);
+    displayBooks(myLibrary);
+    dialog.close();
+    form.reset();
+  }
 });
-
-
-``
