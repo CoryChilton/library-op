@@ -104,3 +104,9 @@ submitBtn.addEventListener('click', (e) => {
     form.reset();
   }
 });
+
+const cancelBtn = document.getElementById('cancel');
+
+cancelBtn.addEventListener('click', (e) => {
+  dialog.close();
+})
